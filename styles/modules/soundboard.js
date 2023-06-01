@@ -9,8 +9,10 @@ export default {
     },
     box: {
         flex: 1,
+    },
+    image: {
         width: 72,
         height: 72,
         resizeMode: 'contain',
-    }
+    },
 }

@@ -1,5 +1,4 @@
 export default {
-  images: {
     0: {
       "badumtss": {
         image: require('../assets/images/badumtss.png'),
@@ -119,6 +118,4 @@ export default {
         image: require('../assets/images/wtf.png'),
       },
     },
-    7: {},
-  }
 }

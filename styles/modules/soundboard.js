@@ -15,4 +15,11 @@ export default {
         height: 72,
         resizeMode: 'contain',
     },
+    stopButtonContainer: {
+        marginTop: 16,
+        fontSize: 30,
+    },
+    stopButton: {
+        backgroundColor: '#f00',
+    },
 }

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
+import React, { useState } from 'react'
+import { Text, View, Image, TouchableOpacity, ScrollView, Button } from 'react-native'
 import Sound from 'react-native-sound'
 import styles from '../styles'
 import soundboard from '../utils/soundboard'
@@ -7,6 +7,7 @@ import soundboard from '../utils/soundboard'
 Sound.setCategory('Playback')
 
 export default function Soundboard() {
+  const [soundEffect, setSoundEffect] = useState()
   function playSound(name) {
     var sound = new Sound(name + '.mp3', Sound.MAIN_BUNDLE, (error) => {
       if (error) {
@@ -17,8 +18,13 @@ export default function Soundboard() {
     setTimeout(() => {
       sound.setVolume(1)
       sound.play()
-    }, 100)
-    
+    }, 50)
+    setSoundEffect(sound)
+  }
+
+  function stopSound() {
+    if (soundEffect)
+      soundEffect.stop()
   }
 
   return (
@@ -42,7 +48,7 @@ export default function Soundboard() {
                   key={s}
                   onPress={() => playSound(s)}>
                 <Image
-                  style={styles.soundboard.image}
+                  style={{...styles.soundboard.image, ...styles.center}}
                   source={soundEffect.image}
                 ></Image>
               </TouchableOpacity>
@@ -52,6 +58,14 @@ export default function Soundboard() {
           </View>
         }
         )}
+
+        <View style={styles.soundboard.stopButtonContainer}>
+        <Button
+          color={styles.soundboard.stopButton.backgroundColor}
+          title="STOP"
+          onPress={() => stopSound()}
+        ></Button>
+        </View>
 
       </View>
       </ScrollView>

@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ReactNativeTest",
-    "slug": "ReactNativeTest",
+    "name": "Torr's Swiss Army App",
+    "slug": "Torr's Swiss Army App",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
   },
-  "name": "ReactNativeTest"
+  "name": "Torr's Swiss Army App"
 }

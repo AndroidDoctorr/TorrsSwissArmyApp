@@ -29,7 +29,6 @@ export default function Soundboard() {
 
   return (
     <View style={{ ...styles.rouge, ...styles.fullHeight }}>
-      <Text style={{ ...styles.center, ...styles.title }}>Soundboard</Text>
       <ScrollView>
       <View style={styles.soundboard.container}>
 
